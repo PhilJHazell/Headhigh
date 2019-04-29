@@ -1,6 +1,40 @@
 {layout="layouts/main"}
 
-<div class="logo-container">
-<img src="/images/logo.png" alt="HeadHigh"/>
-</div>
+<section class="main-container">
+    <div class="auto-container">
+        <div class="main-flex">
+        {exp:channel:entries limit="1" disable="categories|category_fields|member_data|pagination"}
+       
+            <a href="/{channel_name}/{url_title}" class="lead-story" style="background-image:url('{main_image}'); -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+
+                <div class="black-bar">
+    
+                    <h4>{channel_title}</h4>
+                    <h2>{title}</h2>
+                    <h5>{intro}</h5>
+             
+                </div>
+            </a>
+         
+        {/exp:channel:entries}
+
+            <div class="secondary-stories">
+            {exp:channel:entries limit="2" offset="1" disable="categories|category_fields|member_data|pagination"}
+                <a href="/{channel_name}/{url_title}" class="sec-story"  style="background-image:url('{main_image}'); -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+                    <div class="black-bar">
+                        <h4>{channel_title}</h4>
+                        <h3>{title}</h3>
+                    </div>
+                </a>
+            {/exp:channel:entries}
+            </div>
+        </div>
+    </div>
+</section
 
