@@ -15,7 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   $main-font: 'Montserrat', 'Open Sans', sans-serif;
   $secondary-font: 'Open Sans', sans-serif;
-  $hover-color: #6dffe2;
+  $hover-color: #DE3C4B;
 
   article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block; }
@@ -95,7 +95,7 @@ font-size: 13px;
 text-transform: uppercase;
 letter-spacing: 1px;
 color:#ffffff;
-margin-bottom: 10px;
+margin-bottom: 5px;
 transition: all 0.3s;
 &:hover{
     color:$hover-color;
@@ -138,18 +138,20 @@ color:#7e7e7e;
     max-width: 1020px;
     margin: 0 auto;
 }
+
+.black-bar{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.64);
+    position: absolute;
+    bottom: 0;
+}
 .main-flex{
     display: flex;
     flex-direction: row;
     height: 400px;
     margin-top: 50px;
     
-    .black-bar{
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.64);
-        position: absolute;
-        bottom: 0;
-    }
+   
     .lead-story{
         width: 62%;
         position: relative;
@@ -157,7 +159,7 @@ color:#7e7e7e;
         &:hover{
             background-size: 120% 120%;
         
-        h2, h4{
+        h2{
             color: $hover-color;
         }
     }
@@ -182,13 +184,152 @@ color:#7e7e7e;
             &:hover{
                 background-size: 120% 120%;
             
-            h3, h4{
+            h3{
                 color: $hover-color;
             }
         }
             .black-bar{
                 padding: 20px;
                 box-sizing: border-box;
+            }
+        }
+    }
+}
+
+.entries{
+    display: flex;
+    
+}
+.lower-container{
+    margin-top: 50px;
+    h3{
+        font-size: 22px;
+        margin-bottom: 5px;
+        &.title{
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            a{
+                text-decoration: none;
+                color:#ffffff;
+                transition: all 0.3s;
+                &:hover{
+                    color:$hover-color;
+                }
+            }
+        }
+    }
+    h5{
+        font-size: 12px;
+    }
+    .black-bar{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .auto-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .left-side{
+            max-width: 250px;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            .entries{
+                flex-direction: column;
+                .entry{
+                    height: 260px;
+                    width: 100%;
+                    max-width: 250px;
+                    position: relative;
+                    &:first-child{
+                        margin-bottom:20px;
+                    }
+                    h3{
+                        font-size: 22px;
+                    }
+                    &:hover{
+                    h3{
+                        color: $hover-color;
+                    }}
+                }
+            }
+        }
+        .right-side{
+            max-width: 740px;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            .right-side-block{
+                &:nth-child(n+2){
+                    margin-top: 50px;
+                }
+            }
+            .entries{
+                flex-direction: row;
+                justify-content: space-between;
+                .entry{
+                    height: 260px;
+                    width: 48%;
+                    max-width: 360px;
+                    position: relative;
+                    &:hover{
+                        h3{
+                            color: $hover-color;
+                        }}
+                }
+                
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #090909;
+    width: 100%;
+    margin-top: 75px;
+    .auto-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px 0;
+        .footer-column{
+            width:25%;
+            h1{
+                font-family: $main-font;
+                font-size: 24px;
+                color:#ffffff;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            p{
+                font-family: $secondary-font;
+                font-size: 14px;
+                color:#ffffff;
+                line-height: 23px;
+                        }
+            li{
+                
+                    margin-bottom: 13px;
+               
+                a{
+                    font-family: $main-font;
+                    font-size: 15px;
+                    color:#ffffff;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: all 0.3s;
+                    &:hover{
+                        
+                            color: $hover-color;
+                        }
+                    i{
+                        font-weight: normal;
+                        font-size: 20px;
+                    }
+                }
             }
         }
     }
