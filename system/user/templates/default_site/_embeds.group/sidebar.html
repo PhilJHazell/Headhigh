@@ -1,0 +1,28 @@
+
+        <div class="sidebar">
+        
+            <div class="popular">
+
+                <h4>Most Read</h4>
+
+    <div class="entries">
+                 {exp:channel:entries limit="3" disable="categories|category_fields|member_data|pagination" dynamic="no"}
+              <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" alt="Image for {title}" width="330" height="150" crop="yes" add_dims="no" quality="90"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+            {/exp:channel:entries}
+            </div>
+
+            </div>
+
+        </div>

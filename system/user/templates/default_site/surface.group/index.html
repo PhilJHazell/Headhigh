@@ -1,0 +1,188 @@
+{layout="layouts/main"}
+
+<section class="main-container">
+    <div class="auto-container">
+        <div class="main-flex">
+        {exp:channel:entries status="open" limit="1" disable="categories|category_fields|member_data|pagination"}
+       
+            <a href="/{channel_name}/{url_title}" class="lead-story" 
+  ">
+        {exp:ce_img:single src="{main_image}" width="800" height  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
+                <div class="black-bar">
+    
+                    <h4>{channel_title}</h4>
+                    <h2>{title}</h2>
+                </div>
+            </a>
+         
+        {/exp:channel:entries}
+
+            <div class="secondary-stories disNone">
+            {exp:channel:entries status="open" offset="1" limit="2" disable="categories|category_fields|member_data|pagination"}
+                <a href="/{channel_name}/{url_title}" class="sec-story">
+  {exp:ce_img:single src="{main_image}" width="800"  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
+                    <div class="black-bar">
+                        <h4>{channel_title}</h4>
+                        <h3>{title}</h3>
+                    </div>
+                </a>
+                 
+                
+            {/exp:channel:entries}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="lower-container">
+
+    <div class="auto-container">
+
+     <div class="left-side">
+
+        <div class="left-side-block">
+            <h3 class="title"><a href="/galleries">Latest Galleries »</a></h3>
+            <div class="entries">
+             {exp:channel:entries status="open" channel="galleries" disable="categories|category_fields|member_data|pagination"}
+            <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" width="250" height="150" crop="yes" add_dims="no" quality="90" alt="Main Image for {title}"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+                {if total_results < 2}
+                <a href="/{channel_name}/{url_title}" class="entry"  style="background-color:black;">
+                    <div class="black-bar">
+                        <h3>More Coming Soon</h3>
+                        <h5>HeadHigh</h5>
+                    </div>
+                </a>
+                {/if}
+            {/exp:channel:entries}
+            </div>
+        </div>
+
+     </div>
+
+     <div class="right-side">
+
+         <div class="right-side-block">
+            <h3 class="title" ><a href="/reviews">Latest Reviews »</a></h3>
+            <div class="entries">
+             {exp:channel:entries status="open" limit="2" channel="reviews" disable="categories|category_fields|member_data|pagination"}
+            <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" width="355" height="150" crop="yes" add_dims="no" quality="90" alt="Main Image for {title}"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+                {if total_results < 2}
+                <a href="/{channel_name}/{url_title}" class="entry"  style="background-color:black;">
+                    <div class="black-bar">
+                        <h3>More Coming Soon</h3>
+                        <h5>HeadHigh</h5>
+                    </div>
+                </a>
+                {/if}
+            {/exp:channel:entries}
+            </div>
+        </div>
+
+         <div class="right-side-block">
+            <h3 class="title"><a href="/interviews">Latest Interviews »</a></h3>
+            <div class="entries">
+             {exp:channel:entries status="open" limit="2" channel="interviews" disable="categories|category_fields|member_data|pagination"}
+             <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" width="355" height="150" crop="yes" add_dims="no" quality="90" alt="Main Image for {title}"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+            {/exp:channel:entries}
+            </div>
+        </div>
+
+         <div class="right-side-block">
+            <h3 class="title"><a href="/features">Latest Features »</a></h3>
+            <div class="entries">
+             {exp:channel:entries status="open" limit="2" channel="features" disable="categories|category_fields|member_data|pagination"}
+             <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" width="355" height="150" crop="yes" add_dims="no" quality="90" alt="Main Image for {title}"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+                {if total_results < 2}
+                <a href="/{channel_name}/{url_title}" class="entry"  style="background-color:black;">
+                    <div class="black-bar">
+                        <h3>More Coming Soon</h3>
+                        <h5>HeadHigh</h5>
+                    </div>
+                </a>
+                {/if}
+            {/exp:channel:entries}
+            </div>
+        </div>
+
+        <div class="right-side-block gallery-block">
+            <h3 class="title"><a href="/features">Latest Galleries »</a></h3>
+            <div class="entries">
+             {exp:channel:entries status="open" limit="2" channel="galleries" disable="categories|category_fields|member_data|pagination"}
+            <div class="entry">
+              
+              <a href="/{channel_name}/{url_title}" >
+               <div class="image-container">
+                {exp:ce_img:single src="{main_image}" width="355" height="150" crop="yes" add_dims="no" quality="90" alt="Main Image for {title}"}
+                </div>
+                </a>
+                <div class="text-block">
+                 <h3><a href="/{channel_name}/{url_title}"> {title}</a></h3>
+                 <p>{body_content:limit characters="140"}</p>
+                </div>
+
+                 </div>
+                {if total_results < 2}
+                <a href="/{channel_name}/{url_title}" class="entry"  style="background-color:black;">
+                    <div class="black-bar">
+                        <h3>More Coming Soon</h3>
+                        <h5>HeadHigh</h5>
+                    </div>
+                </a>
+                {/if}
+            {/exp:channel:entries}
+            </div>
+        </div>
+
+     </div>
+
+    </div>
+</section>
+

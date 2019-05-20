@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title>{if layout:title}{layout:title}{if:else}HeadHigh - The home of alternative and underground music news, reviews, interviews, features and more...{/if}</title>
+     <meta name="description" content="{layout:description}">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="/assets/skin/favi.ico" />
+       <link rel="alternate" href="http://www.headhighmusic.co.uk/{if segment_1}{segment_1}{/if}{if segment_2}/{segment_2}{/if}" hreflang="en"/>
+
+      <!--JSON Schema Object-->
+      {layout:schemaJSON}
+
+
+      <!-- Pagination Rel Links -->
+      {if layout:next_page}<link rel="next" href="{layout:next_page}" />{/if}
+      {if layout:previous_page}<link rel="prev" href="{layout:previous_page}" />{/if}
+      <!--Canonicals-->
+      {if layout:canonical}<link rel="canonical" href="{layout:canonical}" />{/if}
+
+      <!--Facebook OGP-->
+      <meta property="og:site_name" content="HeadHigh" />
+      <meta property="og:title" content="{if layout:title != ''} {layout:title} {if:else} HeadHigh - The home of alternative and underground music news, reviews, interviews, features and more... {/if}" />
+      <meta property="og:url" content="{current_url}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="{if layout:image}{layout:image}{if:else}http://headhighmusic.co.uk/images/logo.png{/if}" />
+      <!---------------->
+
+      <!-- Twitter Card data -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="HeadHigh">
+      <meta name="twitter:title" content="{if layout:title != ''} {layout:title} {if:else} HeadHigh - The home of alternative and underground music news, reviews, interviews, features and more... {/if}">
+      <meta name="twitter:image:src" content="{if layout:image != ''}{layout:image}{/if}">
+      <!---------------->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,600i" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/min/main.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140028735-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140028735-1');
+</script>
+
+    </head>
+  <body>
+
+  <header>
+    <div class="auto-container">
+
+    
+      <div class="logo">
+        <a href="/" title="Home"><img src="/images/logo.png" alt="Headhigh"/></a>
+      </div>
+
+     <div class="menu-open">
+    <i class="fas fa-bars" onclick="openNav()"></i>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/interviews">Interviews</a></li>
+        <li><a href="/galleries">Galleries</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li>|</li>
+        <li><a href="https://www.facebook.com/headhighmusicbranding/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/headhighco/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+       <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/interviews">Interviews</a></li>
+        <li><a href="/galleries">Galleries</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="https://www.facebook.com/headhighmusicbranding/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/headhighco/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+
+    </div>
+  </header>
+
+  {layout:contents}
+  <footer>
+    <div class="auto-container">
+
+      <div class="footer-column">
+      <h1>HeadHigh</h1>
+      <p>The home of alternative and underground music news, reviews, interviews, features and more...</p>
+      </div>
+
+      <div class="footer-column">
+      <ul>
+        <li><a href="/reviews">Latest Reviews</a>
+        <li><a href="/interviews">Latest Interviews</a>
+        <li><a href="/galleries">Latest Galleries</a>
+        <li><a href="/features">Latest News</a>
+      </ul>
+      </div>
+
+      <div class="footer-column">
+      <ul>
+        <li><a href="/about">About HeadHigh</a>
+        <li><a href="/contact">Contact Us</a>
+          <li><a href="https://www.facebook.com/headhighmusicbranding/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/headhighco/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      </div>
+      
+    </div>
+  </footer>
+
+  
+<script   src="http://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+</body>
+</html>

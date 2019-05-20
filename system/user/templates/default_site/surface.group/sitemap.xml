@@ -1,0 +1,65 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://www.headhighmusic.co.uk/</loc>
+<changefreq>weekly</changefreq>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/about</loc>
+<changefreq>yearly</changefreq>
+<priority>0.4</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/contact</loc>
+<changefreq>yearly</changefreq>
+<priority>0.4</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/galleries</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/features</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/reviews</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.headhighmusic.co.uk/interviews</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+{exp:channel:entries channel="galleries" dynamic="no" limit="600" disable="member_data|comments|category_fields|pagination"}
+<url>
+  <loc>https://www.headhighmusic.co.uk/galleries/{url_title}</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+{/exp:channel:entries}
+{exp:channel:entries channel="features" dynamic="no" limit="600" disable="member_data|comments|category_fields|pagination"}
+<url>
+  <loc>https://www.headhighmusic.co.uk/features/{url_title}</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+{/exp:channel:entries}
+{exp:channel:entries channel="reviews" dynamic="no" limit="600" disable="member_data|comments|category_fields|pagination"}
+<url>
+  <loc>https://www.headhighmusic.co.uk/reviews/{url_title}</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+{/exp:channel:entries}
+{exp:channel:entries channel="interviews" dynamic="no" limit="600" disable="member_data|comments|category_fields|pagination"}
+<url>
+  <loc>https://www.headhighmusic.co.uk/interviews/{url_title}</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+{/exp:channel:entries}
+</urlset>

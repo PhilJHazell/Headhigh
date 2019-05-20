@@ -1,0 +1,12 @@
+{if segment_2}
+  {if segment_2 ~ '/^P\d+/'}
+      {!--This is a paginated archive--}
+      {embed="galleries/.archive"}
+  {if:else}
+  {!--This is a single entry--}
+      {embed="galleries/.single-entry"}
+  {/if}
+{if:else}
+{!--This is the archive--}
+  {embed="galleries/.archive"}
+{/if}

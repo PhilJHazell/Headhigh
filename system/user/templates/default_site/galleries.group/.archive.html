@@ -1,0 +1,33 @@
+{layout="layouts/main"}
+{layout:set name="title" value="Galleries | HeadHigh"}
+{layout:set name="description" value="HeadHigh's archive of galleries from the independent & underground to the mainstream"}
+{layout:set name="image" value="{site_url}images/uploads/images/sigma6.jpg"}
+{layout:set name="canonical" value="{site_url}galleries"}
+{layout:set name="schemaJSON"}
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+        "@type" : "WebSite",
+        "name" : "galleries | HeadHigh",
+        "description" : "HeadHigh's archive of galleries from the independent & underground to the mainstream",
+        "url" : "{site_url}galleries",
+        "image" : "{site_url}images/uploads/images/sigma6.jpg"
+    }
+</script>
+{/layout:set}
+
+<section class="header">
+    <div class="auto-container">
+        <h1>HeadHigh Galleries</h1>
+        <p>HeadHigh's archive of galleries from the independent & underground to the mainstream</p>
+    </div>
+</section>
+
+<section class="archive">
+        <div class="auto-container">
+
+                <div class="entries">
+           {embed="_embeds/archive-entries" channel="galleries"}
+                </div>
+      </div>
+</section>

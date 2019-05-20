@@ -1,0 +1,101 @@
+ {layout="layouts/main"}
+ {exp:channel:entries 
+                limit="1" 
+                dynamic="yes" 
+                channel="interviews" 
+                show_future_entries="yes"
+                show_expired="yes"
+                disable="member_data|pagination"
+                track_views="one"
+                status="Open|Closed"
+            }
+{layout:set name="title" value="{exp:xml_encode}{title:limit characters='39' end_char='...'}{/exp:xml_encode} | HeadHigh"}
+{layout:set name="description" value="{exp:xml_encode}{intro}{/exp:xml_encode}"}
+{layout:set name="image" value="{main_image}"}
+{layout:set name="canonical" value="{site_url}interviews/{url_title}"}
+{layout:set name="schemaJSON"}
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+        "@type" : "Article",
+        "name" : "{title} | HeadHigh",
+        "dateCreated" : "{entry_date format="%d %F %Y"}",
+        "datePublished" : "{entry_date format="%d %F %Y"}",
+        "headline" : "{title}",
+        "publisher" : {
+            "@type":"Organization",
+            "name": "HeadHigh",
+            "email": "info@headhighmusic.co.uk",
+            "logo": "http://www.headhighmusic.co.uk/images/logo.png"},
+        "mainEntityOfPage" : "{exp:xml_encode}{body_content}{/exp:xml_encode}",
+        "articleBody" : "{exp:xml_encode}{body_content}{/exp:xml_encode}",
+        "description" : "{exp:xml_encode}{intro}{/exp:xml_encode}",
+        "url" : "{site_url}interviews/{url_title}",
+        "image" : "{main_image}",
+        "speakable" : "{exp:xml_encode}{intro}{/exp:xml_encode}{exp:xml_encode}{body_content}{/exp:xml_encode}",
+        "author": "{author}"
+    }
+</script>
+{/layout:set}
+{/exp:channel:entries}
+
+<section class="article">
+
+    <div class="auto-container">
+
+        <div class="main-article">
+        {exp:channel:entries 
+                limit="1" 
+                dynamic="yes" 
+                channel="interviews" 
+                show_future_entries="yes"
+                show_expired="yes"
+                disable="member_data|pagination"
+                track_views="one"
+                status="Open|Closed"
+            }
+             {if no_results}
+        {redirect="404"}
+    {/if}
+            <h1>{title}</h1>
+             <h3>{entry_date format="%d %F %Y"}</h3>
+            <h5>{intro}</h5>
+             {if youtube_id}
+              <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/{youtube_id}?modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            {if:else}
+            {exp:ce_img:single add_dims="no" src="{main_image}" alt="Image for {title}"  width="653"}
+            {/if}
+            {if body_content}{body_content}{/if}
+            {if list_content}
+                {list_content}
+                <h4>{list_content:title}</h4>
+                {exp:ce_img:single add_dims="no" src="{list_content:image}" alt="Image for {list_content:title}"  width="653"}
+                <h6>{list_content:image_credit}</h6>
+                <p>{list_content:body_content}</p>
+                {/list_content}
+            {/if}
+
+                 {if spotify_embed_code}
+            <iframe src="https://open.spotify.com/embed/{spotify_embed_code}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            {/if}
+
+              {if band_name}
+            <h3>Follow {band_name} here:</h3>
+            {if band_facebook}<a href="{band_facebook}" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>{/if}
+            {if band_twitter}<a href="{band_twitter}" class="social-icon" target="_blank"><i class="fab fa-twitter-square"></i></a>{/if}
+            {if band_instagram}<a href="{band_instagram}" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>{/if}
+            {if band_spotify}<a href="{band_spotify}" class="social-icon" target="_blank"><i class="fab fa-spotify"></i></a>{/if}
+            {if band_apple}<a href="{band_apple}" class="social-icon" target="_blank"><i class="fab fa-apple"></i></a>{/if}
+            {if band_website}<a href="{band_website}" class="social-icon" target="_blank"><i class="fas fa-globe"></i></a>{/if}
+            {/if}
+
+            {/exp:channel:entries}
+        </div>
+
+        {embed="_embeds/sidebar"}
+
+    </div>
+
+</section>
