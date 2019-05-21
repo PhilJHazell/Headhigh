@@ -3,11 +3,11 @@
                 limit="1" 
                 dynamic="yes" 
                 channel="features" 
-                show_future_entries="yes"
+                show_future_entries="no"
                 show_expired="yes"
                 disable="member_data|pagination"
                 track_views="one"
-                status="Open|Closed"
+                status="Open"
             }
 {layout:set name="title" value="{exp:xml_encode}{title:limit characters='39' end_char='...'}{/exp:xml_encode} | HeadHigh"}
 {layout:set name="description" value="{exp:xml_encode}{intro}{/exp:xml_encode}"}
@@ -49,10 +49,10 @@
                 dynamic="yes" 
                 channel="features" 
                 show_future_entries="yes"
-                show_expired="yes"
+                show_expired="no"
                 disable="member_data|pagination"
                 track_views="one"
-                status="Open|Closed"
+                status="Open"
             }
              {if no_results}
         {redirect="404"}
@@ -71,9 +71,7 @@
             {if:else}
             {exp:ce_img:single add_dims="no" src="{main_image}" alt="Image for {title}"  width="653"}
             {/if}
-            {if spotify_embed_code}
-            <iframe src="https://open.spotify.com/embed/{spotify_embed_code}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            {/if}
+         
             
             {if body_content}{body_content}{/if}
             {if list_content}

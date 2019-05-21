@@ -7,7 +7,7 @@
        
             <a href="/{channel_name}/{url_title}" class="lead-story" 
   ">
-        {exp:ce_img:single src="{main_image}" width="800" height  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
+        {exp:ce_img:single src="{main_image}" width="800" height="595" allow_scale_larger="yes"  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
                 <div class="black-bar">
     
                     <h4>{channel_title}</h4>
@@ -20,7 +20,7 @@
             <div class="secondary-stories disNone">
             {exp:channel:entries status="open" offset="1" limit="2" disable="categories|category_fields|member_data|pagination"}
                 <a href="/{channel_name}/{url_title}" class="sec-story">
-  {exp:ce_img:single src="{main_image}" width="800"  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
+  {exp:ce_img:single src="{main_image}" width="800" height="492" allow_scale_larger="yes"  add_dims="no" crop="yes" alt="Main Image for {title}" quality="84"}
                     <div class="black-bar">
                         <h4>{channel_title}</h4>
                         <h3>{title}</h3>
