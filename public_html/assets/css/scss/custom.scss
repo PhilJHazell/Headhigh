@@ -611,6 +611,10 @@ footer{
                 text-transform: uppercase;
                 letter-spacing: 1px;
             }
+            h4{
+                font-size: 18px;
+                margin-top: 50px;
+            }
             h5{
                 font-family: $secondary-font;
                 color:#ffffff;
@@ -653,7 +657,8 @@ footer{
             }
             img{
                 width: 100%;
-                margin-bottom: 20px;
+                &:first-child{
+                margin-bottom: 20px;}
             }
         }
 
@@ -803,6 +808,11 @@ li{
     text-decoration: none;
   }
   
+  .share-links{
+      a{
+          margin-bottom: 15px;
+      }
+  }
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
@@ -821,4 +831,8 @@ li{
 
 @media screen and (max-width:500px){
     .disNone{display: none!important;}
+}
+
+#google-center-div{
+    margin:0 auto;
 }

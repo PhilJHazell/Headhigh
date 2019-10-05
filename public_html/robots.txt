@@ -1,3 +1,2 @@
 User-Agent: *
 Disallow: /reviews/preview
-Disallow: /surface/sitemap
