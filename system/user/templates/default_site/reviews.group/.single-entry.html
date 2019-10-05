@@ -1,4 +1,7 @@
  {layout="layouts/main"}
+ <?php
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
  {exp:channel:entries 
                 limit="1" 
                 dynamic="yes" 
@@ -40,11 +43,11 @@
                 limit="1" 
                 dynamic="yes" 
                 channel="reviews" 
-                show_future_entries="yes"
-                show_expired="yes"
+                show_future_entries="no"
+                show_expired="n0"
                 disable="member_data|pagination"
                 track_views="one"
-                status="Open|Closed"
+                status="Open"
             }
              {if no_results}
         {redirect="404"}
@@ -59,6 +62,13 @@
             {if:else}
             {exp:ce_img:single add_dims="no" src="{main_image}" alt="Image for {title}"  width="653"}
             {/if}
+
+            <div class="share-links">
+            <h3>Share this now:</h3>
+            <a href="https://www.facebook.com/share.php?u=<?=$url?>&title={title}" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?text={title}%0D%0A%0D%0A+<?=$url?>" class="social-icon" target="_blank"><i class="fab fa-twitter-square"></i></a>
+           
+            </div>
             {if body_content}{body_content}{/if}
             {if list_content}
                 {list_content}
